@@ -1,0 +1,52 @@
+<그래프>
+graph = {
+    'A': ['B', 'C', 'D'],
+    'B': ['A'],
+    'C': ['A', 'E', 'F'],
+    'D': ['A'],
+    'E': ['C'],
+    'F': ['C']
+}
+
+1. BFS
+-큐 사용
+from collections import deque
+
+def BFS(graph, root):
+    visited = [] #방문한노드목록
+    queue = deque() #방문할 노드 목록
+    queue.append(root) #1.루트 집어넣기
+    while queue: #2.큐가 존재할때
+        n = queue.popleft() #3.꺼내기
+        if n not in visited: #4.방문여부 확인
+            visited.append(n) #5.방문 체크
+            queue.extend(graph[node]) #6.추가하기
+    return visited
+  
+print(BFS(graph_list, root_node))
+
+2. DFS
+- 스택 사용
+def dfs(graph, start_node):
+
+    stack = list() #방문할노드목록
+    visit = list() #방문한노드목록
+
+    stack.append(start_node) #1.루트집어넣기
+    
+    while stack: #2. 스택확인
+    	node = stack.pop() #3. 꺼내기
+        if node not in visit:#4. 방문체크
+            visit.append(node)#5. 방문하기
+            stack.extend(reversed(graph[node]))#6. 추가하기
+            
+    return visit
+
+- 재귀함수 이용
+def dfs_recursive(graph, start, visited = []):
+    visited.append(start)
+ 
+    for node in graph[start]:
+        if node not in visited:
+            dfs_recursive(graph, node, visited)
+    return visited

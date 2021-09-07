@@ -1,0 +1,15 @@
+Last-In-First-Out
+
+파이썬에서는 리스트가 스택 역할을 함
+
+1. 초기화
+stack=[]
+
+2. push
+stack.append(원소)
+
+3.pop
+변수=stack.pop()
+
+4.top
+top=stack[-1]
