@@ -1,10 +1,13 @@
 import sys
-
-arr=[0,1,2,4]
-t=int(sys.stdin.readline())
-for i in range(4,11):
-    arr.append(arr[i-1]+arr[i-2]+arr[i-3])
-
-for i in range(t):
-    n=int(sys.stdin.readline())
-    print(arr[n])
+n=int(sys.stdin.readline())
+for i in range(n):
+    k=int(sys.stdin.readline())
+    arr=[0]*k
+    arr[0]=1
+    if k>1:
+        arr[1]=2
+    if k>2:
+        arr[2]=4
+    for j in range(3,k):
+        arr[j]=arr[j-1]+arr[j-2]+arr[j-3]
+    print(arr[k-1])
