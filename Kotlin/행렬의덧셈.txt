@@ -1,0 +1,13 @@
+class Solution {
+    fun solution(arr1: Array<IntArray>, arr2: Array<IntArray>): Array<IntArray> {
+        val row=arr1.size
+        val column=arr1[0].size
+        var answer = Array(row,{IntArray(column)})
+        for(i in 0..row-1){
+            for(j in 0..column-1){
+                answer[i][j]=arr1[i][j]+arr2[i][j]
+            }
+        }
+        return answer
+    }
+}

@@ -1,0 +1,28 @@
+class Solution {
+    fun solution(lottos: IntArray, win_nums: IntArray): IntArray {
+        var answer = ArrayList<Int>()
+        var zero:Int=0
+        var count:Int=0
+        var best:Int
+        var worst:Int
+        
+        for(i in lottos){
+            if(i==0){
+                zero++
+            }else if(win_nums.contains(i)){
+                count++
+            }
+        }
+        best=7-(zero+count)
+        worst=7-count
+        if(best==7){
+            best=6
+        }
+        answer.add(best)
+        if(worst==7){
+            worst=6
+        }
+        answer.add(worst)
+        return answer.toIntArray()
+    }
+}

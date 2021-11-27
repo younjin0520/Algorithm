@@ -1,0 +1,14 @@
+class Solution {
+    fun solution(x: Int): Boolean {
+        var answer = true
+        val string_x:String=x.toString()
+        var num:Int=0
+        for(i in 0..string_x.length-1){
+            num=Character.getNumericValue(string_x[i])+num
+        }
+        if(x%num!=0){
+            answer=false
+        }
+        return answer
+    }
+}

@@ -1,0 +1,11 @@
+class Solution {
+    fun solution(n: Long): Long {
+        var answer= StringBuilder()
+        var arr=n.toString().toCharArray()
+        arr.sortDescending()
+        for(i in arr){
+            answer.append(i)
+        }
+        return answer.toString().toLong()
+    }
+}
