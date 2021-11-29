@@ -1,0 +1,21 @@
+1.dfs - stack으로 구현
+import java.util.Stack;
+
+public void DFS(int start){
+    boolean[] visited = new boolean[노드의 수];
+    Stack<Integer> stack = new Stack<Integer>();
+    stack.push(start);//시작노드넣기
+
+    while (!stack.isEmpty()){
+        int v = stack.pop();
+
+        if (!visited[v]){
+            visited[v] = true;
+            for (int i = 0; i < list[v].size(); i++){
+                int dest = list[v][i];
+                if (!visited[dest])
+                    stack.push(dest);
+            }
+        }
+    }
+}

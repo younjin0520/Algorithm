@@ -1,0 +1,21 @@
+1.입출력
+- 출력
+System.out.println("출력내용");
+
+- 입력
+import java.util.Scanner;
+Scanner sc = new Scanner(System.in);
+int A=sc.nextInt(); //공백을 기준으로 받음
+sc.close();
+
+2.배열
+-선언
+int[] arr=new int[N];
+
+-정렬
+Arrays.sort(arr);
+
+3.문자열
+String
+길이: str.length()
+인덱스 문자 반환: str.charAt(인덱스)
